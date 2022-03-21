@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 21 16:38:47 2022
+
+@author: kimsubin
+"""
+# [ case A ]
+
+def solution(s):
+    answer = len(s)
+    for step in range(1,len(s)//2+1): #1개 step부터 압축 단위를 늘려가면서 확인하기
+        compressed = ""
+        front = s[0:step] #처음부터 step만큼의 문자열 추출
+        count = 1
+        
+        for j in range(step, len(s), step):
+            if front == s[j:j + step]:
+                count+=1
+            else:
+                compressed += str(count) + front if count >=2 else front
+                front = s[j:j + step] # 다시 초기화 함
+                count = 1
+        compressed += str(count)+ front if count >=2 else count
+        answer = min(answer, len(compressed))
+        
+    return answer
+
+
+# [ case B ]
