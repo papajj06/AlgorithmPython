@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 21 16:09:26 2022
+
+@author: kimsubin
+"""
+
+
+s = input()
+result = []
+value = 0
+
+for i in s:
+    if i.isalpha():
+        result.append(i)
+    else:
+        value += int(i)
+
+result.sort() # 알파벳만 받아서 오름차순 정렬
+
+if value !=0:
+    result.append(str(value))
+
+print(''.join(result))
