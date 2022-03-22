@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 22 14:13:54 2022
+
+@author: kimsubin
+"""
+
+t = int(input())
+for i in range(t):
+    
+    h,w,n = map(int,input().split())
+    x = (n//h)+1
+    y = (n%h)
+    
+    if n%h==0:
+        x =n//h
+        y = h
+    print(f'{y*100 + x}')
