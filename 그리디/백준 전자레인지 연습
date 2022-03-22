@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 22 15:42:02 2022
+
+@author: kimsubin
+"""
+
+ # CASE A
+ 
+T = int(input())
+time = [0]*3
+button = [300,60,10]
+
+if T %10 != 0:
+    print(-1)
+
+else:
+    for i in range(3):
+        time[i] = int(T/button[i])
+        T-= time[i]*button[i]
+    print(time[0], time[1], time[2])
+    
+
+
+    
