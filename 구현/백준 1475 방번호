@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar 26 22:24:58 2022
+
+@author: kimsubin
+"""
+
+#caseA
+
+n = input()
+result = [0]*9
+
+for number in n:
+    number = int(number)
+    if number == 9:
+        number = 6
+    result[number]+=1
+
+result[6] = (result[6]+1)//2
+print(max(result))
+
+
+#caseB - replace() 함수 사용
+
+number = input.replace('9','6')
+result = [0]*9
+
+for i in number:
+    result[int(i)] = number.count(i)
+
+result[6] = result[6]//2 + result[6]%2
+print(max(result))
