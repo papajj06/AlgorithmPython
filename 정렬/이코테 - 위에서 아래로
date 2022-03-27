@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Mar 27 22:29:56 2022
+
+@author: kimsubin
+"""
+
+# 출력은 [27, 15, 12]
+
+n = int(input())
+number = [0]*n
+
+for i in range(n):
+    number[i]=int(input())
+    
+number.sort()
+print(number[::-1])
+
+# 출력은 27, 15, 12
+
+n = int(input())
+array = []
+for i in range(n):
+    array.append(int(input()))
+
+array = sorted(array, reverse=True)
+
+for i in array:
+    print(i,end=" ")
