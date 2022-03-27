@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Mar 27 22:45:32 2022
+
+@author: kimsubin
+"""
+
+n = int(input())
+array = []
+
+for i in range(n):
+    students = input().split()
+    array.append((students[0], int(students[1])))
+    
+
+array = sorted(array, key=lambda student: student[1])
+for student in array:
+    print(student[0], end=" ")
